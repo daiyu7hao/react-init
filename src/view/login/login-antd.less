@@ -1,0 +1,82 @@
+@contentHeight:350px;
+
+.login-antd{
+  font-size: 1.4em;
+  background-color: #f6f7f9;
+  height: 100vh;
+  .header{
+    padding: 5px 0;
+    margin-bottom: 70px;
+    .logo{
+      padding-left: 80px;
+      img{
+        height: 35px;
+      }
+    }
+  }
+  .content{
+    .pic{
+      margin-left: 100px;
+      margin-right: 50px;
+      max-height: @contentHeight;
+      overflow: hidden;
+      img{
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .footer{
+    position: absolute;
+    bottom: 20px;
+    background-color: #f8f8f8;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+  }
+  .ant-form-item-control{
+    line-height: 40px;
+  }
+  
+  .login-form{
+    border: 2px solid #ddd;
+    padding: 30px 20px;
+    border-radius: 10px;
+    height: @contentHeight;
+    max-width: 300px;
+    .login-form-forgot {
+      float: right;
+    }
+    .login-form-button {
+      width: 100%;
+    }
+  }
+}
+
+
+.moveball{
+  position: relative;
+  height: 1px;
+  background-color: #ddd;
+  margin-bottom: 30px;
+  &:after{
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #ddd;
+    position: absolute;
+    bottom: 1px;
+    margin-left: 50%;
+    animation: move 5s;
+  }
+}
+
+@keyframes move
+{
+0% {margin-left:50%;}
+33% {margin-left:0%;}
+66% {margin-left:100%;}
+100% {margin-left:50%;}
+}

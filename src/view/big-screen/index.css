@@ -1,0 +1,155 @@
+/* 总体布局 */
+.big-screen{
+  font-size: 14px;
+  height: 100vh;
+  min-height: 400px;
+  min-width: 1200px;
+  overflow-y: hidden;
+  padding: 0 30px 20px 30px;
+  background:  url('./images/bg.png')  no-repeat, #090b34;
+    background-size: cover;
+}
+.bs-body:before, .bs-body:after{
+  content: "";
+  height: 0;
+  display: table;
+  clear: both;
+}
+.bs-header{
+  height: 80px;
+  font-size: 40px;
+  text-align: center;
+  color: #fff;
+}
+.bs-body{
+  height: calc(100% - 80px);
+  display: flex;
+}
+.bs-col1, .bs-col3{
+  flex: 25;
+  height: calc(100% - 30px);
+}
+.bs-col2{
+  flex: 42;
+  box-sizing: border-box;
+  padding: 0 1em;
+  height: calc(100% - 15px);
+}
+.bs-col3{
+
+}
+
+/* 给下面的块增加margin-top */
+.bs-col1>.bs-part:not(:first-child), .bs-col2>.bs-part:not(:first-child), .bs-col3>.bs-part:not(:first-child){
+  margin-top: 15px;
+}
+.evidence-size, .evidence-case-size{
+  height: 17%;
+}
+.evidence-size-distribution, .evidence-case-state, .evidence-size-top5, .nearly6m-case-distribution{
+  height: 41.5%;
+}
+.data-node-distribution{
+  height: 70.6%;
+
+}
+.evidence-tendency{
+  height: 29.4%;
+
+}
+/* 小块的布局 */
+.bs-part{
+  position: relative;
+  border: 1px solid #20386e;
+  box-shadow: inset 0px 0px 5px 5px #0c1348;
+}
+.bs-part:after{
+  content: "";
+  position: absolute;
+  left: -.2em;
+  bottom: -.2em;
+  width: 0;
+  height: 0;
+  border: .2em solid;
+  border-color: transparent transparent transparent #1a8ed8;
+  transform: rotate(135deg);
+}
+.bs-part:before{
+  content: "";
+  position: absolute;
+  right: -.2em;
+  bottom: -.2em;
+  width: 0;
+  height: 0;
+  border: .2em solid;
+  border-color: transparent transparent transparent #1a8ed8;
+  transform: rotate(45deg);
+}
+.bs-part-title{
+  background: grey;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 0;
+  text-align: center;
+  color: #99d4f7;
+  background: linear-gradient(to bottom, #0d124b, #12154b 30%, #133072 70%, #12438f);
+}
+.bs-part-body, .bs-part-body>div{
+  height: 100%;
+}
+.bs-part-body .echarts-auto-size{
+  height: 100% !important;
+}
+
+
+.bs-part-title-center{
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.percent-bar{
+    height: 100%;
+    padding: 20px;
+}
+.percent-bar-item{
+  height: 20%;
+  padding-top: 1%;
+}
+.percent-bar-name{
+  height: 15%;
+  color: black;
+  line-height: 1;
+}
+.percent-bar-color{
+  height: 50%;
+  background: gray;
+  position: relative;
+}
+.percent-bar-color>div{
+  position: absolute;
+  left: 0;
+  background: linear-gradient(to right, blue, lightblue);
+  height: 100%;
+  animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeInLeft;
+}
+.percent-bar-color>span{
+  position: absolute;
+  right: 5px;
+  top: -2px;
+  color: #fff;
+}
+
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,82 @@
+.dragdiv-wrapper{
+  position: relative;
+  min-height: 20px;
+  min-width: 20px;
+  max-width: 100%;
+.dragdiv-box {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    max-width: 100%;
+    min-width: 20px;
+    min-height: 20px;
+    .t,
+    .b,
+    .l,
+    .r {
+        position: absolute;
+        z-index: 1;
+        background: transparent;
+    }
+    .l,
+    .r {
+        width: 10px;
+        height: 100%;
+        cursor: col-resize;
+    }
+    .t,
+    .b {
+        width: 100%;
+        height: 10px;
+        cursor: row-resize;
+    }
+    .t {
+        top: 0;
+    }
+    .b {
+        bottom: 0;
+    }
+    .l {
+        left: 0;
+    }
+    .r {
+        right: 0;
+    }
+    .tl,
+    .bl,
+    .br,
+    .tr {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        background: transparent;
+        z-index: 2;
+        cursor: nwse-resize;
+    }
+    .tl,
+    .bl {
+        left: -3px;
+    }
+    .tr,
+    .br {
+        right: -3px;
+    }
+    .br,
+    .bl {
+        bottom: -3px;
+    }
+    .tl,
+    .tr {
+        top: -3px;
+    }
+    .tr,
+    .bl {
+        cursor: nesw-resize;
+    }
+    /*图片*/
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+}

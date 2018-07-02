@@ -1,0 +1,128 @@
+@import '../styleImages/color.less';
+@import '../styleImages/common.less';
+@prefixCls: feu-carousel;
+.@{prefixCls} {
+    background-color: @lightgray;
+    overflow: hidden;
+    position: relative;
+    &-wrapper {
+        height: 100%;
+    }
+    &-item {
+        height: 100%;
+        width: 100%;
+        min-height: 1px;
+        float: left;
+        overflow: hidden;
+        img{
+            width:100%;
+            height:100%;
+        }
+    }
+    &-arrow {
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: @deepgray;
+        opacity: .5;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        z-index: 5;
+        transform: translateY(-50%);
+        text-align: center;
+        transition: .3s;
+        i {
+            font-size: 24px;
+            line-height: 36px;
+        }
+          &:hover{
+            opacity: 1;
+          }
+    }
+    &-prearrow {
+        left: 15px;
+    }
+    &-nextarrow {
+        right: 15px;
+    }
+    &-dots {
+        position: absolute;
+    }
+    &-dots {
+        position: absolute;
+        bottom: 0px;
+        display: block;
+        text-align: center;
+        width: 100%;
+        >li {
+            display: inline-block;
+            padding: 12px 4px;
+            cursor: pointer;
+            position: relative;
+            >div.dot-anchor,>div.dot-state {
+                background-color: @white;
+                opacity: .6;
+                width: 30px;
+                height: 4px;
+                border-radius: 1px;
+                font-size: 0;
+                transition: all .5s;
+            }
+            >div.dot-state{
+                position: absolute;
+                top: 12px;
+                left: 4px;
+                display: none;
+            }
+        }
+    }
+    &-dots{
+        >.@{prefixCls}-dot-active,>li:hover{
+            >div.dot-anchor{
+                background-color: @deepblue;
+                opacity: 1;                
+            }
+        }
+        &-slide{
+            >.@{prefixCls}-dot-active,>li:hover{
+                >div.dot-anchor{
+                    background-color: @white;
+                    opacity: .6;
+                }
+                >div.dot-state{
+                    background-color: @deepblue;
+                    display: block;
+                    animation: progressRun 5s linear forwards;           
+                }
+            }          
+        }
+    }
+    /*动画效果*/
+    &-scrollx {
+        .@{prefixCls}-wrapper {
+            transition: transform 1s cubic-bezier(.645, .045, .355, 1), width 1s cubic-bezier(.645, .045, .355, 1), -webkit-transform 1s cubic-bezier(.645, .045, .355, 1);
+        }
+    }
+    &-fade {
+        .@{prefixCls}-item {
+            height: 0;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .@{prefixCls}-item-active{
+            height: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+@keyframes progressRun{
+    0%{
+        width:0;
+    }
+    100%{
+        width:30px;        
+    }
+}

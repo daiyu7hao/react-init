@@ -1,0 +1,31 @@
+/* 表单样式 */
+.form-item-required{
+  position: relative;
+}
+.form-item-required>span:before{
+  content: "*";
+  position: absolute;
+  color: red;
+  left: 0;
+  top: 0px;
+}
+
+/* 弹窗样式 */
+.notice-modal{
+  width: 90%;
+}
+.notice-modal .am-modal-body>div{
+  height: 400px !important;
+}
+.notice-modal .am-modal-content{
+  text-align: left;
+}
+
+/* placeholder充当input的内容时的样式 */
+.placeholder-is-value input::-webkit-input-placeholder{
+  color: #000 !important;
+}
+.div-imitation-inputitem .am-list-line{
+  border-bottom: 1PX solid #ddd;
+}
+
